@@ -1,0 +1,171 @@
+body{
+	width:100%;
+	padding:0;
+	margin:0;
+	font-family:Verdana, Geneva, sans-serif;
+	background:url(../images/main_backgr.jpg) no-repeat fixed center top;
+	background-size:100% 100%;
+}
+.clear{
+	padding:0;
+	margin:0;
+	line-height:0;
+	clear:both;
+}
+.left{float:left}
+.right{float:right}
+.main_wrapper{
+	width:998px;
+	margin:10px auto;
+	padding:0;
+}
+	.main_band{
+		width:100%;
+		position:relative;
+		background:url(../images/top_band_backgr.png);
+	}
+		.logo_field{
+			width:35%;
+			float:left;
+		}
+			.main_band .logo_field img{
+				padding:5px 20px;
+			}
+		.menu_field{
+			width:60%;
+			padding:20px 20px;
+			float:right;
+		}
+			.menu_field ul{
+				margin:0;
+				padding:0;
+				list-style:0;
+				text-align:right;
+			}
+				.menu_field ul li{
+					display:inline;
+					margin:0 -3px;
+					padding:22px;
+					vertical-align:middle;
+				}
+					.menu_field ul li a{
+						color:#ffffff;
+						text-decoration:none;
+					}
+				.menu_field ul li.selected{
+					background:url(../images/top_band_backgr.png);
+				}
+	.empty_space{
+		width:100%;
+		height:245px;
+		padding:0;
+		margin:0;
+	}
+	.content_wrapper{
+		width:100%;
+		margin:0;
+		padding:0;
+	}
+		.content_field{
+			width:70%;
+			float:left;
+		}
+		.rightside_bar{
+			width:28%;
+			float:right;
+		}
+		.rounded{
+			width:100%;
+			margin:2% 0;
+			position:relative;
+			/*border:1px solid red;*/
+			 -moz-border-radius: 20px;
+			-webkit-border-radius: 20px;
+			-khtml-border-radius: 20px;
+			border-radius: 20px;
+			behavior: url(../css/PIE.htc);
+			-moz-box-shadow: 5px 5px 5px rgba(68,68,68,0.6);
+			-webkit-box-shadow: 5px 5px 5px rgba(68,68,68,0.6);
+			box-shadow: 5px 5px 5px rgba(68,68,68,0.6);
+			/*filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=1,MakeShadow=true,ShadowOpacity=0.10);
+			-ms-filter: "progid:DXImageTransform.Microsoft.Blur(PixelRadius=1,MakeShadow=true,ShadowOpacity=0.10)";
+			zoom: 1;*/
+				-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=1, Direction=135, Color=#444444)";
+			filter: progid:DXImageTransform.Microsoft.Shadow(Strength=1, Direction=135, Color=#444444);
+		}
+		.rightside_bar .rounded{margin:5.5% 0;}
+		.rounded.small{
+			width:32%;
+			float:left;
+			margin:0 0 2% 2%;
+		}
+			.rounded.small.first {margin-left:0}
+			.rounded_header{
+				margin:0;
+				padding:10px 20px;
+				position:relative;
+				background:url(../images/content_header_backgr.png);
+				-moz-border-radius: 20px 20px 0 0;
+				-webkit-border-radius: 20px 20px 0 0;
+				-khtml-border-radius: 20px 20px 0 0;
+				border-radius: 20px 20px 0 0;
+				behavior: url(../css/PIE.htc);
+			}
+				.rounded_header.face{
+					background:url(../images/content_header_backgr_face.png);
+				}
+				.rounded_header h1{
+					padding:0;
+					margin:0;
+					color:#ffffff;
+					font-weight:100;
+					font-size:20px;
+					text-transform:uppercase;
+				}
+				.rounded.small .rounded_header h1{
+					font-size:16px;
+				}
+			.rounded_content{
+				margin:0;
+				padding:20px;
+				position:relative;
+				background:url(../images/rounded_content_backgr.png);
+				-moz-border-radius: 0 0 20px 20px;
+				-webkit-border-radius:0 0  20px 20px ;
+				-khtml-border-radius: 0 0 20px 20px ;
+				border-radius: 0 0 20px 20px ;
+				behavior: url(../css/PIE.htc);
+			}
+				.rounded_content p{
+					margin:0;
+					padding:0;
+					text-align:justify;
+				}
+					.rounded_content p.contacts{
+						font-size:11px;
+						text-align:left;
+						line-height:120%;
+					}
+					.rounded_content p.content_footer{
+						margin:20px 0 10px 0;
+						font-size:12px;
+						text-align:left;
+					}
+						
+						.rounded_content p.content_footer a {text-transform:uppercase;}
+						
+					.rounded_content p img{
+						width:33%;
+						margin:0 10px 0 0;
+						float:left;
+					}
+						.rounded.small .rounded_content p{font-size:14px}
+						.rounded.small .rounded_content p img{
+							width:45%;
+						}
+						.rounded_content p.content_footer.right {text-align:right}
+						.rounded_content p.content_footer.right a{vertical-align:middle;text-decoration:none;}
+						.rounded_content p.content_footer.right a img{width:7%;float:right;vertical-align:middle;}
+		.main_band.footer{padding:1px;}/*margin-top:1%;*/
+			.main_band.footer p{color:white;text-align:center;font-size:12px}
+			.main_band.footer span.counter{padding-right:20px;position:relative;float:right;}
