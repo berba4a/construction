@@ -11,7 +11,7 @@ if (!defined("CONSTANTS"))
     define('DB_TYPE', 'MySQLiO');
     $site_path = realpath(dirname(__FILE__)) . '/..';
 	define('HTDOCS', $site_path);
-    $docroot="D:/SERVER/htdocs/construction/";  //"C:/xampp/htdocs/web/";  //dev  - will be removed after going live
+    $docroot="C:/xampp/htdocs/web/";  //"D:/SERVER/htdocs/construction/";  //dev  - will be removed after going live
  
     define("DIR_SEP","/" ); 
     define("SEP", ( substr(PHP_OS, 0, 3) == 'WIN' ) ? "\\" : "/");
@@ -19,7 +19,8 @@ if (!defined("CONSTANTS"))
     define ("SITE_URL","http://localhost"); //www.sete.gr // url
     define ("COOKIE_DOMAIN", ".localhost"); // domain name here with dot before it
   
-    define ("SITE_ROOT","/construction/");
+	 define ("SITE_ROOT","/web/construction/");
+	//define ("SITE_ROOT","/construction/");
     //define ("SITE_ROOT","/");      // site folder if site is in the root leave it /
     define ("DOC_ROOT",$docroot);  // feiNew
     

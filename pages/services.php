@@ -1,14 +1,66 @@
 <?php 
-$doc_root="D:/SERVER/htdocs/construction/";//"C:/xampp/htdocs/web/";
+//$doc_root="D:/SERVER/htdocs/construction/";
+$doc_root="C:/xampp/htdocs/web/construction/";
 $old_path =  ini_set("include_path",$doc_root);//ini_get('include_path'). PATH_SEPARATOR .
 ini_set("include_path",ini_get('include_path'). $old_path);
 include_once("config.php");
 include_once("includes/header.php");
 ?>
+<script type='text/javascript'>
+	$(document).ready(function(){
+		$('.content_field .rounded').each(function(){
+			var currID = "";
+			currID = $(this).attr('id');
+			if(window.location.href.indexOf('#'+currID) > -1)
+			{
+				/*Close not choosen elements*/
+				$(this).siblings().each(function()
+				{
+					$(this).children('.rounded_content').slideToggle('slow',function(){
+						$(this).prev().toggleClass('closed');
+					});
+				});
+				/*change the arrow to open close*/
+				$(this).siblings().each(function()
+				{
+					var arrow_obj = $(this).children('.rounded_header').children('h1').children('span.open_close_arrow').children('i');
+					if($(arrow_obj).hasClass('icon-angle-up'))
+					{
+						$(arrow_obj).removeClass('icon-angle-up');
+						$(arrow_obj).addClass('icon-angle-down');
+					}
+					else
+					{
+						$(arrow_obj).removeClass('icon-angle-down');
+						$(arrow_obj).addClass('icon-angle-up');
+					}
+				});
+				$(window).scrollTop('350');
+			}
+		});
+	});
+	$(document).ready(function(){
+		$('.open_close_arrow').click(function(){
+			if($(this).children('i').hasClass('icon-angle-up'))
+			{
+				$(this).children('i').removeClass('icon-angle-up');
+				$(this).children('i').addClass('icon-angle-down');
+			}
+			else
+			{
+				$(this).children('i').removeClass('icon-angle-down');
+				$(this).children('i').addClass('icon-angle-up');
+			}
+			$(this).parent().parent('.rounded_header').next('.rounded_content').slideToggle('slow',function(){
+				$(this).prev().toggleClass('closed');
+			});
+		});
+	});
+</script>
 <div class='content_field'>
 	<div class='rounded' id='repairs'>
 		<div class='rounded_header'>
-			<h1>Ремонти</h1>
+			<h1>Ремонти<span class='open_close_arrow right'><i class="icon-angle-up"></i></span></h1>
 		</div>
 		<div class='rounded_content'>
 			<p>
@@ -29,7 +81,7 @@ include_once("includes/header.php");
 	</div>
 	<div class='rounded' id='construction'>
 		<div class='rounded_header'>
-			<h1>Строителство</h1>
+			<h1>Строителство<span class='open_close_arrow right'><i class="icon-angle-up"></i></span></h1>
 		</div>
 		<div class='rounded_content'>
 			<p>
@@ -52,7 +104,7 @@ include_once("includes/header.php");
 	</div>
 	<div class='rounded' id='moving'>
 		<div class='rounded_header'>
-			<h1>Хамалски услуги</h1>
+			<h1>Хамалски услуги<span class='open_close_arrow right'><i class="icon-angle-up"></i></span></h1>
 		</div>
 		<div class='rounded_content'>
 			<p>

@@ -5,7 +5,7 @@
 <title>Construction site</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="<?php echo SITE_CSS;?>main.css" type="text/css" />
-<link type="text/css" href="<?php echo SITE_CSS;?>menu.css" rel="stylesheet" />
+<link type="text/css" href="<?php echo SITE_CSS;?>fontello/css/fontello.css" rel="stylesheet" />
 
 <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
@@ -34,7 +34,6 @@
 		});
 	});
 </script>
-<!--script type="text/javascript" src="<!--?php echo SITE_JS;?>menu.js"></script-->
 </head>
 <body>
 	<!--facebook implementation-->
@@ -50,7 +49,6 @@
 		}(document, 'script', 'facebook-jssdk'));
 	</script>
 	<!--End facebook-->
-	
 	<div class='main_wrapper'>
 		<div class='main_band'>
 			<div class='logo_field'>

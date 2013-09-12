@@ -1,7 +1,6 @@
-		
 			<!--Start footer-->
 			<div class='rightside_bar'>
-				<div class='rounded'>
+				<div class='rounded' id='contacts_box'>
 					<div class='rounded_header'>
 						<h1>контакти</h1>
 					</div>
@@ -17,7 +16,7 @@
 							<b>адрес: </b>гр.Хасково ,ул."Георги Кирков" 14 , вх.А , ет.1 , ап.15<br />
 						</p>
 						<p class='content_footer'>
-							За повече посробности посетете рубриката <a href='#'>&raquo; контакти</a>
+							За повече посробности посетете рубриката <a href='<?php SITE_ROOT;?>contacts.php'>&raquo; контакти</a>
 						</p>
 					</div>
 				</div>

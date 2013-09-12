@@ -52,7 +52,6 @@ ul{list-style:none;}
 					.menu_field ul li a{
 						padding:22px 18px;
 						color:#ffffff;
-						vertical-align:middle;
 						text-decoration:none;
 					}
 				.menu_field ul li a.selected{
@@ -126,6 +125,13 @@ ul{list-style:none;}
 				border-radius: 20px 20px 0 0;
 				behavior: url(../css/PIE.htc);
 			}
+				.rounded_header.closed{
+					-moz-border-radius: 20px 20px 20px 20px;
+					-webkit-border-radius: 20px 20px 20px 20px;
+					-khtml-border-radius: 20px 20px 20px 20px;
+					border-radius: 20px 20px 20px 20px;
+					behavior: url(../css/PIE.htc);
+				}
 				.rounded_header.face{
 					background:url(../images/content_header_backgr_face.png);
 				}
@@ -140,6 +146,9 @@ ul{list-style:none;}
 				.rounded.small .rounded_header h1{
 					font-size:16px;
 				}
+					.rounded_header h1 .open_close_arrow:hover{
+						cursor:pointer;
+					}
 			.rounded_content{
 				margin:0;
 				padding:20px;
@@ -184,3 +193,12 @@ ul{list-style:none;}
 		.main_band.footer{padding:1px;}/*margin-top:1%;*/
 			.main_band.footer p{color:white;text-align:center;font-size:12px}
 			.main_band.footer span.counter{padding-right:20px;position:relative;float:right;}
+			
+	/*page personal css*/
+	.video{
+		width:600px;
+		margin:20px auto;
+	}
+	p.contacts_big{
+		line-height:150%;
+	}
