@@ -1,0 +1,1 @@
+Here comes all the includes like header.php,footer.php e t.c.
