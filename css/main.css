@@ -6,6 +6,7 @@ body{
 	background:url(../images/main_backgr.jpg) no-repeat fixed center top;
 	background-size:100% 100%;
 }
+ul{list-style:none;}
 .clear{
 	padding:0;
 	margin:0;
@@ -41,19 +42,25 @@ body{
 				padding:0;
 				list-style:0;
 				text-align:right;
+				text-transform:uppercase;
 			}
 				.menu_field ul li{
 					display:inline;
 					margin:0 -3px;
-					padding:22px;
 					vertical-align:middle;
 				}
 					.menu_field ul li a{
+						padding:22px 18px;
 						color:#ffffff;
+						vertical-align:middle;
 						text-decoration:none;
 					}
-				.menu_field ul li.selected{
-					background:url(../images/top_band_backgr.png);
+				.menu_field ul li a.selected{
+					background:url(../images/top_band_backgr_sel.png);
+					/*background:rgba(0,0,0,0.45);
+					background: rgb(0, 0, 0);*/
+					/*filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#72000000, endColorstr=#72000000); /* IE 6/7 */    
+					/*-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#72000000, endColorstr=#72000000)"; /* IE8 */
 				}
 	.empty_space{
 		width:100%;
@@ -61,6 +68,14 @@ body{
 		padding:0;
 		margin:0;
 	}
+		.empty_space img{
+			-moz-box-shadow: 5px 5px 5px rgba(68,68,68,0.6);
+			-webkit-box-shadow: 5px 5px 5px rgba(68,68,68,0.6);
+			box-shadow: 5px 5px 5px rgba(68,68,68,0.6);
+			-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=1, Direction=135, Color=#444444)";
+			filter: progid:DXImageTransform.Microsoft.Shadow(Strength=1, Direction=135, Color=#444444);
+			behavior: url(../css/PIE.htc);
+		}
 	.content_wrapper{
 		width:100%;
 		margin:0;
