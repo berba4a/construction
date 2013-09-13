@@ -19,8 +19,8 @@ if (!defined("CONSTANTS"))
     define ("SITE_URL","http://localhost"); //www.sete.gr // url
     define ("COOKIE_DOMAIN", ".localhost"); // domain name here with dot before it
   
-	 define ("SITE_ROOT","/web/construction/");
-	//define ("SITE_ROOT","/construction/");
+	 //define ("SITE_ROOT","/web/construction/");
+	define ("SITE_ROOT","/construction/");
     //define ("SITE_ROOT","/");      // site folder if site is in the root leave it /
     define ("DOC_ROOT",$docroot);  // feiNew
     

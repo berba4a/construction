@@ -7,10 +7,10 @@
 					<div class='rounded_content'>
 						<p class='contacts'>
 							<img src='<?php echo SITE_IMG;?>contact_us_logo.png' />
-							<b>Телефон:</b>+359 38 662 287<br />
-							<b>GSM(vivacom)</b>: +359 878 111 222<br />
-							<b>GSM(globul):</b> +359 898 111 222<br />
-							<b>GSM(mtel):</b> +359 0888 111 111<br />
+							<b>Телефон:</b>+35938662287<br />
+							<b>GSM(vivacom)</b>: +359878111222<br />
+							<b>GSM(globul):</b> +359 898111222<br />
+							<b>GSM(mtel):</b> +359 0888111222<br />
 							<b>e-mail:</b> <a href='mailto:construction@construction.com' >construction@construction.com</a><br />
 							<b>web page: </b><a href='webpage.com' >webpage.com</a><br />
 							<b>адрес: </b>гр.Хасково ,ул."Георги Кирков" 14 , вх.А , ет.1 , ап.15<br />

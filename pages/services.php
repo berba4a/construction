@@ -1,6 +1,6 @@
 <?php 
-//$doc_root="D:/SERVER/htdocs/construction/";
-$doc_root="C:/xampp/htdocs/web/construction/";
+$doc_root="D:/SERVER/htdocs/construction/";
+//$doc_root="C:/xampp/htdocs/web/construction/";
 $old_path =  ini_set("include_path",$doc_root);//ini_get('include_path'). PATH_SEPARATOR .
 ini_set("include_path",ini_get('include_path'). $old_path);
 include_once("config.php");
@@ -35,32 +35,16 @@ include_once("includes/header.php");
 						$(arrow_obj).addClass('icon-angle-up');
 					}
 				});
-				$(window).scrollTop('350');
+				//$(window).scrollTop('350');
 			}
-		});
-	});
-	$(document).ready(function(){
-		$('.open_close_arrow').click(function(){
-			if($(this).children('i').hasClass('icon-angle-up'))
-			{
-				$(this).children('i').removeClass('icon-angle-up');
-				$(this).children('i').addClass('icon-angle-down');
-			}
-			else
-			{
-				$(this).children('i').removeClass('icon-angle-down');
-				$(this).children('i').addClass('icon-angle-up');
-			}
-			$(this).parent().parent('.rounded_header').next('.rounded_content').slideToggle('slow',function(){
-				$(this).prev().toggleClass('closed');
-			});
 		});
 	});
 </script>
+<script src="<?php echo SITE_JS;?>openClosePanels.js"  type="text/javascript"></script>
 <div class='content_field'>
 	<div class='rounded' id='repairs'>
 		<div class='rounded_header'>
-			<h1>Ремонти<span class='open_close_arrow right'><i class="icon-angle-up"></i></span></h1>
+			<h1>Ремонти<span class='open_close_arrow right'><i class='icon-angle-up'></i></span></h1>
 		</div>
 		<div class='rounded_content'>
 			<p>
@@ -81,11 +65,10 @@ include_once("includes/header.php");
 	</div>
 	<div class='rounded' id='construction'>
 		<div class='rounded_header'>
-			<h1>Строителство<span class='open_close_arrow right'><i class="icon-angle-up"></i></span></h1>
+			<h1>Строителство<span class='open_close_arrow right'><i class='icon-angle-up'></i></span></h1>
 		</div>
 		<div class='rounded_content'>
 			<p>
-				<p>
 				<img src='<?php echo SITE_IMG;?>construction_image.jpg' />
 				Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.  
 			</p>
@@ -99,18 +82,16 @@ include_once("includes/header.php");
 					<li>Строителна услуга 5 - 500 лева</li>
 				</ul>
 			</p>
-			</p>
 		</div>
 	</div>
 	<div class='rounded' id='moving'>
 		<div class='rounded_header'>
-			<h1>Хамалски услуги<span class='open_close_arrow right'><i class="icon-angle-up"></i></span></h1>
+			<h1>Хамалски услуги<span class='open_close_arrow right'><i class='icon-angle-up'></i></span></h1>
 		</div>
 		<div class='rounded_content'>
 			<p>
-				<p>
 				<img src='<?php echo SITE_IMG;?>MOVER.gif' />
-				Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.  
+				Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptuary. 
 			</p>
 			<p>
 				<ul>
@@ -121,7 +102,6 @@ include_once("includes/header.php");
 					<li>Хамалска услуга 4 - 400 лева</li>
 					<li>Хамалска услуга 5 - 500 лева</li>
 				</ul>
-			</p>
 			</p>
 		</div>
 	</div>

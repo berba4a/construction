@@ -1,0 +1,18 @@
+$(document).ready(function(){
+		$('.open_close_arrow').click(function(){
+			if($(this).children('i').hasClass('icon-angle-up'))
+			{
+				$(this).children('i').removeClass('icon-angle-up');
+				$(this).children('i').addClass('icon-angle-down');
+			}
+			else
+			{
+				$(this).children('i').removeClass('icon-angle-down');
+				$(this).children('i').addClass('icon-angle-up');
+			}
+			/*$(this).parent().parent('.rounded_header').slideToggle('slow');*/
+			$(this).parent().parent('.rounded_header').next('.rounded_content').slideToggle('slow',function(){
+				$(this).prev().toggleClass('closed');
+			});
+		});
+	});

@@ -1,6 +1,6 @@
 <?php 
-//$doc_root="D:/SERVER/htdocs/construction/";
-$doc_root="C:/xampp/htdocs/web/construction/";
+$doc_root="D:/SERVER/htdocs/construction/";
+//$doc_root="C:/xampp/htdocs/web/construction/";
 $old_path =  ini_set("include_path",$doc_root);//ini_get('include_path'). PATH_SEPARATOR .
 ini_set("include_path",ini_get('include_path'). $old_path);
 include_once("config.php");
@@ -17,7 +17,7 @@ include_once("includes/header.php");
 				Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
 			</p>
 			<p class='content_footer right'>
-				<a href='#'><img src='<?php echo SITE_IMG;?>yt.png' border='0' />Гледай видеото&nbsp; </a>
+				<a href='<?php echo SITE_ROOT;?>pages/aboutus.php'><!--img src='<!--?php echo SITE_IMG;?>yt.png' border='0' /-->&raquo; Виж повече за нас</a>
 			</p>
 			<div class='clear'></div>
 		</div>

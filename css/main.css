@@ -6,6 +6,8 @@ body{
 	background:url(../images/main_backgr.jpg) no-repeat fixed center top;
 	background-size:100% 100%;
 }
+img{border:0}
+a{text-decoration:none}
 ul{list-style:none;}
 .clear{
 	padding:0;
@@ -13,8 +15,11 @@ ul{list-style:none;}
 	line-height:0;
 	clear:both;
 }
+.hidden{display:none}
 .left{float:left}
 .right{float:right}
+.red{color:red}
+.green{color:green}
 .main_wrapper{
 	width:998px;
 	margin:10px auto;
@@ -40,7 +45,7 @@ ul{list-style:none;}
 			.menu_field ul{
 				margin:0;
 				padding:0;
-				list-style:0;
+				list-style:none;
 				text-align:right;
 				text-transform:uppercase;
 			}
@@ -92,20 +97,16 @@ ul{list-style:none;}
 			width:100%;
 			margin:2% 0;
 			position:relative;
-			/*border:1px solid red;*/
-			 -moz-border-radius: 20px;
+			-moz-border-radius: 20px;
 			-webkit-border-radius: 20px;
 			-khtml-border-radius: 20px;
 			border-radius: 20px;
-			behavior: url(../css/PIE.htc);
 			-moz-box-shadow: 5px 5px 5px rgba(68,68,68,0.6);
 			-webkit-box-shadow: 5px 5px 5px rgba(68,68,68,0.6);
 			box-shadow: 5px 5px 5px rgba(68,68,68,0.6);
-			/*filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=1,MakeShadow=true,ShadowOpacity=0.10);
-			-ms-filter: "progid:DXImageTransform.Microsoft.Blur(PixelRadius=1,MakeShadow=true,ShadowOpacity=0.10)";
-			zoom: 1;*/
-				-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=1, Direction=135, Color=#444444)";
+			-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=1, Direction=135, Color=#444444)";
 			filter: progid:DXImageTransform.Microsoft.Shadow(Strength=1, Direction=135, Color=#444444);
+			behavior: url(../css/PIE.htc);
 		}
 		.rightside_bar .rounded{margin:5.5% 0;}
 		.rounded.small{
@@ -202,3 +203,71 @@ ul{list-style:none;}
 	p.contacts_big{
 		line-height:150%;
 	}
+	
+	.feedback_form{
+		margin:20px 0;
+	}
+		.feedback_form h2{
+			margin:10px 0 0 0;
+			font-size:16px;
+			font-weight:bold;
+		}
+			.feedback_form span.info{
+				font-size:10px;
+			}
+			img.mail{
+				width:30%;
+			}
+			form#contact_form{
+				width:65%;
+				margin:20px 0;
+			}
+		input,textarea{
+			width:100%;
+			margin-bottom:10px;
+			-moz-border-radius: 5px;
+			-webkit-border-radius: 5px;
+			-khtml-border-radius: 5px;
+			border-radius: 5px;
+			behavior: url(../css/PIE.htc);
+		}
+		input{height:20px;}
+		a.button{	
+			padding:5px 10px;
+			border:1px solid #828282;
+			border-style:outset;
+			text-decoration:none;
+			background:#b1b1b1;
+			color:#ffffff;
+			-moz-border-radius: 5px;
+			-webkit-border-radius: 5px;
+			-khtml-border-radius: 5px;
+			border-radius: 5px;
+			behavior: url(../css/PIE.htc);
+		}
+			a.button:hover{
+				background:#dddddd;
+				color:#000000;
+			}
+		.image-set.images_list{	
+			width:95%;
+			margin:20px auto;
+		}
+			/*.image-set.images_list a{
+		
+			}*/
+			img.gallery_image{
+				width:21%;
+				height:130px;
+				margin:2% 0 2% 1%;
+				padding:1%;
+				background:#cccccc;
+				-moz-border-radius: 5px;
+				-webkit-border-radius: 5px;
+				-khtml-border-radius: 5px;
+				border-radius: 5px;
+				behavior: url(../css/PIE.htc);
+			}
+				img.gallery_image:hover{
+					background:#aaaaaa;
+				}
