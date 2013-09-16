@@ -8,8 +8,8 @@ include_once("includes/header.php");
 ?>
 <script type='text/javascript'>
 	$(document).ready(function(){
-		$('#contacts_box').slideUp('slow');
-		/*$('#main_contacts').slideDown('slow');*/
+		$('#contacts_box').fadeOut('slow');
+		/*$('#main_contacts').fadeIn('slow');*/
 	});
 </script>
 <script src='<?php echo SITE_JS;?>feedBackForm.js'></script>
@@ -32,20 +32,21 @@ include_once("includes/header.php");
 			<div class='feedback_form'>
 				<hr />
 				<h2>Можете да използвате формата за пряк контакт </h2>
-				<span class='info'>полетета означени със <span class='red'>*</span> са задължителни!</span>
+				<span class='info'>полетета означени със <span class='red'>*</span> са задължителни!</span><br />
 				<img class='mail right' src='<?php echo SITE_IMG;?>mail.png' />
+				<span id='result_msg'></span><br />
 				<form id='contact_form'>
-					<label for='name'>Вашето име <span class='red'>*</span> : </label><br />
-					<input type='text' id='name' name='name' /><br />
-					<label for='mail'>E-mail : </label><br />
+					<label id='label_name' for='name'>Вашето име <span class='red'>*</span> : </label><br />
+					<input type='text' id='name' name='name' class='mandatory' /><br />
+					<label id='label_mail' for='mail'>E-mail : </label><br />
 					<input type='text' id='mail' name='mail' /><br />
-					<label for='phone'>Телефон за обратна връзка <span class='red'>*</span> : </label><br />
-					<input type='text' id='phone' name='phone' /><br />
+					<label id='label_phone' for='phone'>Телефон за обратна връзка <span class='red'>*</span> : </label><br />
+					<input type='text' id='phone' name='phone' class='mandatory' /><br />
 					<div class='hidden'>
 						<input type='text' id='check' name='check' value='' />
 					</div>
-					<label for='msg'>Вашето запитване : <span class='red'>*</span> : </label><br />
-					<textarea id='msg' name='msg' rows='10'></textarea><br />
+					<label id='label_msg' for='msg'>Вашето запитване : <span class='red'>*</span> : </label><br />
+					<textarea id='msg' name='msg' rows='10' class='mandatory'></textarea><br />
 					<a class='button' href='javascript:void(0)' onclick='submitForm(this)'>Изпрати</a>
 					<a class='button right' href='javascript:void(0)' onclick='resetForm(this)'>Изчисти полетата</a>
 				</form>

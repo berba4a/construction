@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="<?php echo SITE_CSS;?>lightbox.css" media="screen" type="text/css" />
 <link rel="stylesheet" href="<?php echo SITE_CSS;?>main.css" type="text/css" />
 <link type="text/css" href="<?php echo SITE_CSS;?>fontello/css/fontello.css" rel="stylesheet" />
+<link type="text/css" href="<?php echo SITE_CSS;?>fontello/css/animation.css" rel="stylesheet" />
 <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 <!--script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script-->
 <script type='text/javascript'>
