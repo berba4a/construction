@@ -26,17 +26,30 @@ function submitForm(element)
 		}
 	});
 	var mail=$.trim($('input#mail').val());
+	
 	if(''!=mail)
 	{
 		var emailRegex = new RegExp(/^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$/i);
 		var valid = emailRegex.test(mail);
 		if(valid)
-		{
-		
+		{	
+			if($('#label_mail').hasClass('red'))
+			{
+				$('#label_mail').removeClass('red');
+				$('#label_mail span.info').remove();
+			}
 		}
 		else
 		{
-		
+			if(!$('#label_mail').hasClass('red'))
+			{
+				$('#label_mail').addClass('red');
+			}
+			if(!$('#label_mail span.info').length > 0)
+			{
+				$('#label_mail').append('<span class="info">Невалиден e-mail адрес.</span>');
+			}
+			err_cnt++;
 		}
 	}
 	if(err_cnt>0)
@@ -44,7 +57,7 @@ function submitForm(element)
 		if(!$('#result_msg').hasClass('red'))
 		{
 			$('#result_msg').addClass('red');
-			$('#result_msg').html('Всички полета оначени със * са задължителни!');
+			$('#result_msg').html('Не коректно полълнени или празни задължителни полета!');
 		}
 	}
 	else
@@ -52,6 +65,11 @@ function submitForm(element)
 		if($('#result_msg').hasClass('red'))
 		{
 			$('#result_msg').removeClass('red');
+		}
+		if($('#label_mail').hasClass('red'))
+		{
+			$('#label_mail').removeClass('red');
+			$('#label_mail span.info').remove();
 		}
 		$('#result_msg').html('<i class="icon-spin5 animate-spin"></i>&nbsp;Изпращане на вашето запитване...');
 		$.ajax({

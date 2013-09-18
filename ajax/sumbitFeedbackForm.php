@@ -1,8 +1,10 @@
 <?php 
 	if(!isset($_POST['check'])||""==$_POST['check'])
 	{
-		if (filter_var($email_a, FILTER_VALIDATE_EMAIL)) {
-			echo "This ($email_a) email address is considered valid.";
-}
+		$res = mail('ass','test','test message');
+		if($res)
+			echo "Mail sent";
+		else
+			echo "Mail sending error";
 	}
 ?>
