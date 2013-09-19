@@ -46,10 +46,15 @@ include_once("includes/header.php");
 						<input type='text' id='check' name='check' value='' />
 					</div>
 					<label id='label_msg' for='msg'>Вашето запитване : <span class='red'>*</span> : </label><br />
-					<textarea id='msg' name='msg' rows='10' class='mandatory'></textarea><br />
-					<a class='button' href='javascript:void(0)' onclick='submitForm(this)'>Изпрати</a>
+					<textarea id='msg' name='msg' rows='10' class='mandatory'></textarea>
+					<a class='button left' href='javascript:void(0)' onclick='submitForm(this)'>Изпрати</a>
 					<a class='button right' href='javascript:void(0)' onclick='resetForm(this)'>Изчисти полетата</a>
+					<div class='clear'></div>
 				</form>
+				<div class='result_panel'>
+					<div class='close_panel'></div>
+					<span class='suc_msg'></span>
+				</div>
 			</div>
 		</div>
 	</div>

@@ -271,3 +271,31 @@ ul{list-style:none;}
 				img.gallery_image:hover{
 					background:#aaaaaa;
 				}
+				
+			.result_panel{
+				width:30%;
+				padding:20px;
+				display:none;
+				position:absolute;
+				top:50%;
+				left:17%;
+				-moz-border-radius: 5px;
+				-webkit-border-radius: 5px;
+				-khtml-border-radius: 5px;
+				border-radius: 5px;
+				-moz-box-shadow: 5px 5px 5px rgba(68,68,68,0.6);
+				-webkit-box-shadow: 5px 5px 5px rgba(68,68,68,0.6);
+				box-shadow: 5px 5px 5px rgba(68,68,68,0.6);
+				-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=1, Direction=135, Color=#444444)";
+				filter: progid:DXImageTransform.Microsoft.Shadow(Strength=1, Direction=135, Color=#444444);
+				behavior: url(../css/PIE.htc);
+				background:#eeeeee;
+			}
+				.close_panel{
+					width:20px;
+					height:20px;
+					position:absolute;
+					top:-13%;
+					left:96%;
+					background:url(../images/close.png) no-repeat;
+				}

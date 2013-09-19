@@ -3,6 +3,14 @@ function resetForm(element)
 	var form = document.getElementById($(element).parent().attr('id'));
 	form.reset();
 }
+$(document).ready(function()
+{
+	$('.close_panel').click(function()
+	{
+		$('.result_panel').slideUp('slow');
+		$('.suc_msg').html('');
+	})
+});
 function submitForm(element)
 {
 	var err_cnt = 0;
@@ -11,9 +19,9 @@ function submitForm(element)
 		var labelID = 'label_'+$(this).attr('id');
 		if(''==value)
 		{
+			err_cnt++;
 			if(!$('#'+labelID).hasClass('red'))
 			{	
-				err_cnt++;
 				$('#'+labelID).toggleClass('red');
 			}
 		}
@@ -78,7 +86,13 @@ function submitForm(element)
 			data : $(element).parent().serialize(),
 			success : function(response)
 			{
-				$('#result_msg').html(response);
+				$('#result_msg').html('');
+				$('.suc_msg').html(response);
+				$('.result_panel').slideDown('slow');
+				$('textarea,input[type=text]').each(function()
+				{
+					$(this).val('');
+				});
 			}
 		});
 	}
