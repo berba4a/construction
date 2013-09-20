@@ -22,7 +22,7 @@
 				</div>
 				<div class='rounded'>
 					<div class='rounded_header face'>
-						<img src='<?php echo SITE_IMG;?>fb_logo.png' width='130' />
+						<img src='<?php echo SITE_IMG;?>fb_logo.png' width='100' />
 					</div>
 					<div class='rounded_content'>
 						<div class="fb-like-box" data-href="https://www.facebook.com/vicove?hc_location=stream" data-width="241" data-show-faces="true" data-header="true" data-stream="true" data-show-border="false"></div>

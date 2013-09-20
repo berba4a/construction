@@ -10,7 +10,13 @@
 <link type="text/css" href="<?php echo SITE_CSS;?>fontello/css/animation.css" rel="stylesheet" />
 <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 <!--script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script-->
+<!--?php
+	$browser = get_browser(null,true);
+	echo $browser['browser']."<br />";
+	echo $browser['version'];
+?-->
 <script type='text/javascript'>
+
 	$(document).ready(function(){
 		var currID = "";
 		$('#main_menu').children().each(function(){

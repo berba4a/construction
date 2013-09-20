@@ -11,7 +11,8 @@ if (!defined("CONSTANTS"))
     define('DB_TYPE', 'MySQLiO');
     $site_path = realpath(dirname(__FILE__)) . '/..';
 	define('HTDOCS', $site_path);
-    $docroot="C:/xampp/htdocs/web/";  //"D:/SERVER/htdocs/construction/";  //dev  - will be removed after going live
+    $docroot="D:/SERVER/htdocs/construction/";//"C:/xampp/htdocs/construction/";
+	//dev  - will be removed after going live
  
     define("DIR_SEP","/" ); 
     define("SEP", ( substr(PHP_OS, 0, 3) == 'WIN' ) ? "\\" : "/");
