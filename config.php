@@ -6,7 +6,7 @@ if (!defined("CONSTANTS"))
     define('DB_HOST', '127.0.0.1'); 
     define('DB_USER', 'root');
     define('DB_PASS', '');
-    define('DB_NAME', 'construct');
+    define('DB_NAME', 'construction');
     define('DB_PORT', '3306');
     define('DB_TYPE', 'MySQLiO');
     $site_path = realpath(dirname(__FILE__)) . '/..';

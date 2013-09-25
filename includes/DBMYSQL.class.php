@@ -1,6 +1,6 @@
 <?
 class DBMYSQL {
-	private $conn;
+	public $conn;
 	private $hostname;
 	private $username;
 	private $password;
@@ -19,7 +19,7 @@ class DBMYSQL {
 			throw new Exception("Unable to connect to MYSQL server!!!<br>" . $this->conn->connect_error);
 		}
 		
-		$this->query('SET NAMES \'UTF-8\'');
+		$this->query('SET NAMES \'UTF8\'');
 	}
 	
 	function __destruct() {
@@ -97,6 +97,10 @@ class DBMYSQL {
 	
 	function getAffectedRows() {
 		return $this->conn->affected_rows;
+	}
+	function escapeString($string)
+	{
+		return mysqli_real_escape_string($this->conn, $string);
 	}
 	
 	function realEscapeString($string) {
