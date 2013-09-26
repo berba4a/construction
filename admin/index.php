@@ -19,27 +19,41 @@ $db = new DBMYSQL(DB_HOST,DB_USER,DB_PASS,DB_NAME);
 		<meta name="robots" content="noindex" />
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<link rel="stylesheet" href="<?php echo SITE_ROOT;?>admin/css/admin_css.css" type="text/css" />
+		<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+		<script type='text/javascript' src='<?php echo SITE_ROOT;?>admin/js/admin_js.js'></script>
 	</head>
 	<body>
 		<div class='main_wrapper'>
-			<h1>Администрация на галерии</h1>
-			<table cellpadding='0' cellspacing='0' border='0'>
-				<tr>
-					<th width='10%'>
-						#ID
-					</th>
-					<th width='50%' align='left'>
-						Име на галерия
-					</th>
-					<th width='20%'>
-						Последно обновена
-					</th>
-					<th width='20%'>
-						Администрация
-					</th>
-				</tr>
-				
-				<?php
+		<div class='head_band'>
+			<img src='<?php echo SITE_IMG;?>logo.png' border='0' />
+		</div>
+		<?php 
+			if(!isset($_GET['form'])||$_GET['form']!=1)
+			{
+				echo "<h1>Администрация на галерии</h1>";
+				echo "<div class='right_btn'>";
+					echo "<a href='".$_SERVER['PHP_SELF']."?form=1' alt='Добави галерия' title='Добави галерия'>";
+						echo "<img src='".SITE_IMG."file_add.png' width='14' border='0' alt='Добави галерия' title='Добави галерия' />";
+						echo "&nbsp;Добави галерия";
+					echo "</a>";
+				echo "</div>";
+				echo "<div class='clear'></div>";
+				echo "<table cellpadding='0' cellspacing='0' border='0'>";
+					echo "<tr>";
+						echo "<th width='10%'>";
+							#ID
+						echo "</th>";
+						echo "<th width='40%' align='left'>";
+							echo "Име на галерия";
+						echo "</th>";
+						echo "<th width='30%'>";
+							echo "Последно обновена";
+						echo "</th>";
+						echo "<th width='20%'>";
+							echo "Администрация";
+						echo "</th>";
+					echo "</tr>";
+					
 					$query = "SELECT * from galleries";
 					$stmt = $db->query($query);
 					$odd=0;
@@ -60,14 +74,53 @@ $db = new DBMYSQL(DB_HOST,DB_USER,DB_PASS,DB_NAME);
 								echo $row_arr['last_updated'];
 							echo "</td>";
 							echo "<td align='center'>";
-								echo "<img class='button' src='".SITE_IMG."edit.png' title='Редакция' alt='Редакция' />";
+								echo "<a href='".$_SERVER['PHP_SELF']."?form=1&galleryID=".$row_arr['galleryID']."'>";
+									echo "<img class='button' src='".SITE_IMG."edit.png' title='Редакция' alt='Редакция' border='0' />";
+								echo "</a>";
 								echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
 								echo "<img class='button' src='".SITE_IMG."del.png' title='Изтрии' alt='Изтрии' />";
 							echo "</td>";
 						echo "</tr>";
 					}
-				?>
-			</table>
+				echo "</table>";
+			}
+			else
+			{
+				echo "<div class='right_btn btn'>
+					<a class='button' href='".SITE_URL.SITE_ROOT."admin'>&laquo;&nbsp;Назад</a>
+				</div>";
+				echo "<div class='clear'></div>";
+				$form_header="Добавяне на галерия";
+				$galleryID=-1;
+				$gal_name = "";
+				$gal_descr="";
+				if(isset($_GET['galleryID'])&&$_GET['galleryID']>0)
+				{
+					$galleryID = $_GET['galleryID'];
+					$row_arr = $db->getById($galleryID,'galleries');
+					$gal_name = $row_arr['name'];
+					$gal_descr=$row_arr['description'];
+				
+					$form_header ="Редакция на галерия <span class='red'>\"".$gal_name."\"</span>";
+				}
+				echo "<h1>".$form_header."</h1>";
+				echo "<div class='form'>";
+					echo "<form action='' enctype='multipart/form-data' method='POST'>";
+						echo "<label for='name' id='name'>Име на галерията : <span class='red'>*</span></label><br />";
+						echo "<input size='100' type='text' name='name' id='name' value='".$gal_name."' /><br /><br /><br />";
+						echo "<label for='description' id='description'>Описание на галерията : </label><br />";
+						echo "<textarea cols='80' rows='10'>".$gal_descr."</textarea><br /><br />";
+						echo "<fieldset>";
+							echo "<legend>Снимки : <a class='add_photos' href='javascript:void(0);'><img src='".SITE_IMG."file_add.png' width='14' border='0' alt='Добави галерия' title='Добави галерия' />&nbsp;Добави полета</a>&nbsp;</legend>";
+							echo "<div class='image_box'>";
+								echo "<input type='file' name='image[]' id='image[]' />";
+							echo "</div>";
+						echo "</fieldset>";
+						echo "<input type='submit' value='Запази' />";
+					echo "</form>";
+				echo "</div>";
+			}	
+		?>
 		</div>
 	</body>
 </html>

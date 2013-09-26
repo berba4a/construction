@@ -54,6 +54,22 @@ class DBMYSQL {
 			return false;
 		}
 	}
+	function getById($id,$tablename)
+	{
+		$pkey_q = "SHOW KEYS FROM ".$tablename." WHERE Key_name = 'PRIMARY'";
+		$pk_stmt = $this->query($pkey_q);
+		$prKeyName = "";
+		while($pk_row = $this->fetchArray($pk_stmt))
+		{
+			$prKeyName = $pk_row['Column_name'];
+		}
+		$query = "SELECT * FROM ".$tablename." WHERE ".$prKeyName."=".$id." ";
+		$stmt = $this->query($query);
+		while($row = $this->fetchArray($stmt))
+		{
+			return $row;
+		}
+	}
 	
 	function commit() {
 		if ($this->query('commit')) {

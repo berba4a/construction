@@ -7,6 +7,7 @@ body{
 img{border:0}
 a{text-decoration:none}
 ul{list-style:none;}
+.red{color:#ff0000;}
 .clear{
 	padding:0;
 	margin:0;
@@ -17,11 +18,42 @@ ul{list-style:none;}
 	width:998px;
 	text-align:center;
 }
+.head_band{
+	width:100%;
+	padding:5px 0 5px 20px;
+	position:relative;
+	top:0;
+	text-align:left;
+	background:url(../../images/top_band_backgr.png);
+}
 h1{
 	margin:10px auto;
 	text-align:center;
 	font-size:18px;
 }
+.right_btn{
+	margin:5px 80px  0;
+	float:right;
+	font-size:12px;
+	font-weight:bold;
+}
+	.right_btn a{
+		color:#00ff00;
+	}
+		.right_btn a:hover{
+			color:#008000;
+		}
+	.right_btn.btn{
+		margin:20px 80px;
+	}
+	.right_btn a.button{
+		padding:3px 5px;
+		border:1px solid #008000;
+		-moz-border-radius: 5px;
+		-webkit-border-radius: 5px;
+		-khtml-border-radius: 5px;
+		border-radius: 5px;
+	}
 table{
 	width:90%;
 	margin:10px auto;
@@ -33,7 +65,8 @@ table{
 	border-radius: 5px;
 }
 	table tr th{
-		padding:5px 5px;
+		padding:10px;
+		font-size:14px;
 		background:#f1f1f1;
 		border:1px solid #ffffff;
 	}
@@ -47,3 +80,29 @@ table{
 			background:#f8f8f8;
 		}
 			img.button:hover{cursor:pointer}
+			
+	/*Form css*/
+	.form{
+		width:80%;
+		margin:20px auto;
+		padding:20px;
+		text-align:left;
+	}
+		legend a.add_photos{
+			padding:3px 5px;
+			color:#828282;
+			border:1px solid #828282;
+			-moz-border-radius: 5px;
+			-webkit-border-radius: 5px;
+			-khtml-border-radius: 5px;
+			border-radius: 5px;
+		}
+			legend a.add_photos:hover{
+				background:#f1f1f1;
+			}
+		fieldset .image_box{
+			width:auto;
+			margin:15px 5px;
+			float:left;
+			border:1px solid red;
+		}
