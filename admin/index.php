@@ -41,7 +41,7 @@ $db = new DBMYSQL(DB_HOST,DB_USER,DB_PASS,DB_NAME);
 				echo "<table cellpadding='0' cellspacing='0' border='0'>";
 					echo "<tr>";
 						echo "<th width='10%'>";
-							#ID
+							echo "#ID";
 						echo "</th>";
 						echo "<th width='40%' align='left'>";
 							echo "Име на галерия";
@@ -105,7 +105,7 @@ $db = new DBMYSQL(DB_HOST,DB_USER,DB_PASS,DB_NAME);
 				}
 				echo "<h1>".$form_header."</h1>";
 				echo "<div class='form'>";
-					echo "<form action='' enctype='multipart/form-data' method='POST'>";
+					echo "<form action='submit_form.php' enctype='multipart/form-data' method='POST'>";
 						echo "<label for='name' id='name'>Име на галерията : <span class='red'>*</span></label><br />";
 						echo "<input size='100' type='text' name='name' id='name' value='".$gal_name."' /><br /><br /><br />";
 						echo "<label for='description' id='description'>Описание на галерията : </label><br />";
@@ -113,7 +113,8 @@ $db = new DBMYSQL(DB_HOST,DB_USER,DB_PASS,DB_NAME);
 						echo "<fieldset>";
 							echo "<legend>Снимки : <a class='add_photos' href='javascript:void(0);'><img src='".SITE_IMG."file_add.png' width='14' border='0' alt='Добави галерия' title='Добави галерия' />&nbsp;Добави полета</a>&nbsp;</legend>";
 							echo "<div class='image_box'>";
-								echo "<input type='file' name='image[]' id='image[]' />";
+								echo "<input type='file' name='image[]' id='image_1' />";
+								echo "<div id='prew_image_1'></div>";
 							echo "</div>";
 						echo "</fieldset>";
 						echo "<input type='submit' value='Запази' />";
