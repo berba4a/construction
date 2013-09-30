@@ -86,7 +86,12 @@ class DBMYSQL {
 			return false;
 		}		
 	}
-	
+	function getPrKey($tablename)
+	{
+		$stmt = $this->query("SHOW KEYS FROM ".$tablename." WHERE Key_name = 'PRIMARY'");
+		$row_arr = $this->fetchArray($stmt);
+		return $row_arr['Column_name'];
+	}
 	function numRows($result = false) {
 		return $result->num_rows;
 	}

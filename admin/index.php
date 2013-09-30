@@ -11,7 +11,10 @@ $db = new DBMYSQL(DB_HOST,DB_USER,DB_PASS,DB_NAME);
 //$db->query($query);
 //$q = "SELECT * from galleries";
 //echo ($db->numRows($db->query($q)));
+
+$prKey = $db->getPrKey('galleries');
 ?>
+
 <!DOCTYPE>
 <html>
 	<head>
@@ -65,7 +68,7 @@ $db = new DBMYSQL(DB_HOST,DB_USER,DB_PASS,DB_NAME);
 							$css = "class='colored'";
 						echo "<tr ".$css.">";
 							echo "<td align='center'>";
-								echo $row_arr['galleryID'];
+								echo $row_arr[$prKey];
 							echo "</td>";
 							echo "<td align='left'>";
 								echo $row_arr['name'];
@@ -74,7 +77,7 @@ $db = new DBMYSQL(DB_HOST,DB_USER,DB_PASS,DB_NAME);
 								echo $row_arr['last_updated'];
 							echo "</td>";
 							echo "<td align='center'>";
-								echo "<a href='".$_SERVER['PHP_SELF']."?form=1&galleryID=".$row_arr['galleryID']."'>";
+								echo "<a href='".$_SERVER['PHP_SELF']."?form=1&galleryID=".$row_arr[$prKey]."'>";
 									echo "<img class='button' src='".SITE_IMG."edit.png' title='Редакция' alt='Редакция' border='0' />";
 								echo "</a>";
 								echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
@@ -94,9 +97,9 @@ $db = new DBMYSQL(DB_HOST,DB_USER,DB_PASS,DB_NAME);
 				$galleryID=-1;
 				$gal_name = "";
 				$gal_descr="";
-				if(isset($_GET['galleryID'])&&$_GET['galleryID']>0)
+				if(isset($_GET[$prKey])&&$_GET[$prKey]>0)
 				{
-					$galleryID = $_GET['galleryID'];
+					$galleryID = $_GET[$prKey];
 					$row_arr = $db->getById($galleryID,'galleries');
 					$gal_name = $row_arr['name'];
 					$gal_descr=$row_arr['description'];
@@ -109,7 +112,7 @@ $db = new DBMYSQL(DB_HOST,DB_USER,DB_PASS,DB_NAME);
 						echo "<label for='name' id='name'>Име на галерията : <span class='red'>*</span></label><br />";
 						echo "<input size='100' type='text' name='name' id='name' value='".$gal_name."' /><br /><br /><br />";
 						echo "<label for='description' id='description'>Описание на галерията : </label><br />";
-						echo "<textarea cols='80' rows='10'>".$gal_descr."</textarea><br /><br />";
+						echo "<textarea name='description' id='description' cols='80' rows='10'>".$gal_descr."</textarea><br /><br />";
 						echo "<fieldset>";
 							echo "<legend>Снимки : <a class='add_photos' href='javascript:void(0);'><img src='".SITE_IMG."file_add.png' width='14' border='0' alt='Добави галерия' title='Добави галерия' />&nbsp;Добави полета</a>&nbsp;</legend>";
 							echo "<div class='image_box'>";
@@ -117,6 +120,7 @@ $db = new DBMYSQL(DB_HOST,DB_USER,DB_PASS,DB_NAME);
 								echo "<div id='prew_image_1'></div>";
 							echo "</div>";
 						echo "</fieldset>";
+						echo "<input type='hidden' name=".$prKey." value='".$galleryID."' />";
 						echo "<input type='submit' value='Запази' />";
 					echo "</form>";
 				echo "</div>";

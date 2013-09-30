@@ -300,3 +300,26 @@ ul{list-style:none;}
 					left:96%;
 					background:url(../images/close.png) no-repeat;
 				}
+				
+	/*services page*/
+	h2#header_bg,h2#header_en{
+		width:70%;
+		height:30px;
+		padding:0;
+		margin:0 0 10px 0;
+		float:left;
+		overflow:hidden;
+	}
+	h2#header_en{display:none}
+	.lang_flags{
+		width:20%;
+		text-align:right;
+		float:right;
+	}
+	.lang_switch{
+		width:24px;
+		height:16px;
+		border:1px solid #828282;
+		border-style:outset;
+	}
+	.lang_switch:hover{cursor:pointer;border-style:inset;}
