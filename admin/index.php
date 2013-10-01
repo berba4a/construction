@@ -93,6 +93,7 @@ $prKey = $db->getPrKey('galleries');
 					<a class='button' href='".SITE_URL.SITE_ROOT."admin'>&laquo;&nbsp;Назад</a>
 				</div>";
 				echo "<div class='clear'></div>";
+				
 				$form_header="Добавяне на галерия";
 				$galleryID=-1;
 				$gal_name = "";
@@ -107,6 +108,9 @@ $prKey = $db->getPrKey('galleries');
 					$form_header ="Редакция на галерия <span class='red'>\"".$gal_name."\"</span>";
 				}
 				echo "<h1>".$form_header."</h1>";
+				
+				if(isset($_GET['err'])&&""!=$_GET['err'])
+					echo "<span class='red'>".$_GET['err']."</span>";
 				echo "<div class='form'>";
 					echo "<form action='submit_form.php' enctype='multipart/form-data' method='POST'>";
 						echo "<label for='name' id='name'>Име на галерията : <span class='red'>*</span></label><br />";

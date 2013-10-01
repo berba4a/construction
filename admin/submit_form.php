@@ -5,10 +5,13 @@ $old_path =  ini_set("include_path",$doc_root);//ini_get('include_path'). PATH_S
 ini_set("include_path",ini_get('include_path'). $old_path);
 include_once("config.php");
 include_once("includes/DBMYSQL.class.php");
+
 $db = new DBMYSQL(DB_HOST,DB_USER,DB_PASS,DB_NAME);
 $prKey = $db->getPrKey('galleries');
 $name="";
 $description = "";
+$allowed_mime = array("image/gif","image/jpeg","image/pjpeg","image/png","image/svg+xml","image/tiff");
+
 if(isset($_POST['name'])&&""!=trim($_POST['name']))
 	$name = $db->escapeString($_POST['name']);
 if(isset($_POST['description'])&&""!=trim($_POST['description']))
@@ -35,6 +38,40 @@ if($gal_result==1)
 		echo $_FILES['image']['type'][$key]." Type <br />";
 		echo $_FILES['image']['error'][$key]." Error<br />";
 		echo "<br />---------------<br />";
+		if($_FILES['image']['error'][$key]!=UPLOAD_ERR_NO_FILE)
+		{
+			try
+			{
+				if($_FILES['image']['error'][$key]!=UPLOAD_ERR_OK)
+				{
+					throw new Exception("Upload error :". $_FILES['image']['error'][$key]);
+				}
+				if (count($allowed_mime)>0 && !in_array($_FILES['image']['type'][$key],$allowed_mime))
+				{
+					throw new Exception("File type error : ".$_FILES['image']['type'][$key].". Allowed types : ".implode(';',$allowed_mime));
+				}
+			}
+			catch (Exception $e)
+			{	
+				$err = $e->getMessage();
+				header("location:".$_SERVER['HTTP_REFERER']."&err=".$err);
+			}
+				
+			if(!isset($err)||empty($err))
+			{
+				$destination = DOC_ROOT."gallery".SEP."gallery_".$new_galID.SEP;
+				$dir_path = "gallery".DIR_SEP."gallery_".$new_galID.DIR_SEP;
+				try
+				{
+					createDirectory($destination);
+				}
+				catch(Exception $e)
+				{
+					$err = "".$e->getMessage();
+					header("location:".$_SERVER['HTTP_REFERER']."&err=".$err);
+				}
+			}
+		}
 	}
 	$db->commit();
 }
@@ -43,5 +80,16 @@ else
 	$db->rollback();
 	$err = "Грешка при запис създаване на галерия";
 	echo $err;
+}	
+
+
+function createDirectory($dest)
+{
+	if(!is_dir($dest))
+	{
+		$r = mkdir ( $dest, 0755 ,true);
+		if(!$r)
+			throw new Exception("function mkdirreturned false while trying to created dir $dest");
+	}
 }	
 ?>
