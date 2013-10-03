@@ -123,6 +123,25 @@ $prKey = $db->getPrKey('galleries');
 								echo "<input type='file' name='image[]' id='image_1' />";
 								echo "<div id='prew_image_1'></div>";
 							echo "</div>";
+							if($galleryID>0)
+							{
+								$img_q = "SELECT * FROM images WHERE galleryID=".$galleryID." ";
+								$img_stmt = $db->query($img_q);
+								$img_cnt=0;
+								echo "<div class='clear'></div>";
+								while($img_arr = $db->fetchArray($img_stmt))
+								{
+									$img_cnt++;
+									echo "<div class='image_box'>";
+										echo "<img src='".SITE_ROOT.$img_arr['dir_path'].$img_arr['name']."' />";
+										echo "<a href='#' class='delImg'>Изтрии тази снимка</a>";
+									echo "</div>";
+								}
+								if($img_cnt==0)
+									echo "<div>В тази галерия няма качени снимки</div>";
+									
+							}
+							
 						echo "</fieldset>";
 						echo "<input type='hidden' name=".$prKey." value='".$galleryID."' />";
 						echo "<input type='submit' value='Запази' />";
