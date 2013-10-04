@@ -5,7 +5,7 @@ $old_path =  ini_set("include_path",$doc_root);//ini_get('include_path'). PATH_S
 ini_set("include_path",ini_get('include_path'). $old_path);
 include_once("config.php");
 include_once("includes/DBMYSQL.class.php");
-
+include_once("admin/includes/header.php");
 $db = new DBMYSQL(DB_HOST,DB_USER,DB_PASS,DB_NAME);
 $prKey = $db->getPrKey('galleries');
 $name="";
@@ -23,7 +23,12 @@ else
 	$query = "INSERT INTO galleries (`name`,`description`) values ('".$name."','".$description."')";
 	
 $err="";
-
+echo "<div class='right_btn btn'>
+		<a class='button' href='".SITE_URL.SITE_ROOT."admin'>&laquo;&nbsp;Назад към списъка с галерии</a>
+	</div>";
+echo "<div class='clear'></div>";
+echo "<div class='results'>";
+echo "<h2>Записа завършен - резултати :</h2>";
 $db->query('START TRANSACTION;');
 $gal_result = $db->query($query);
 if($gal_result==1)
@@ -43,76 +48,82 @@ if($gal_result==1)
 	{
 		$err = "".$e->getMessage();
 		$db->rollback();
-		echo "Error creating image gallery directory";
-		//header("location:".$_SERVER['HTTP_REFERER']."&err=".$err);
+		echo "<span class='red'>ERROR : Грешка при създаването на папка за галерията</span><br />";
 	}
 	if(!isset($err)||""==$err)
 	{
+		$db->commit();
+		echo "<br /><span class='result_gallery'>Галерия <b>".$name."</b> е запазена успешно</span><br />";
 		foreach($_FILES['image']['name'] as $key=>$arr)
 		{
 			$img_cnt++;
-			//echo "<br />-------".$key."------<br />";
-			//echo $_FILES['image']['name'][$key]." name<br />";
-			//echo $_FILES['image']['tmp_name'][$key]." tmp_name<br />";
-			//echo $_FILES['image']['size'][$key]." Size<br />";
-			//echo $_FILES['image']['type'][$key]." Type <br />";
-			//echo $_FILES['image']['error'][$key]." Error<br />";
-			//echo "<br />---------------<br />";
+			$images_err="";
 			if($_FILES['image']['error'][$key]!=UPLOAD_ERR_NO_FILE)
 			{
 				try
 				{
 					if($_FILES['image']['error'][$key]!=UPLOAD_ERR_OK)
 					{
-						throw new Exception("Upload error :". $_FILES['image']['error'][$key]);
+						throw new Exception("<br /><span class='red'>Грешка при качване на :". $_FILES['image']['error'][$key]." на файл ".$_FILES['image']['name'][$key]."</span><br />");
 					}
 					if (count($allowed_mime)>0 && !in_array($_FILES['image']['type'][$key],$allowed_mime))
 					{
-						throw new Exception("File type error : ".$_FILES['image']['type'][$key].". Allowed types : ".implode(';',$allowed_mime));
+						throw new Exception("<br /><span class='red'>ERROR : Грешен тип файл на файл <b>".$_FILES['image']['name'][$key]."</b>: ".$_FILES['image']['type'][$key].".</span><br /> Разрешени типове : ".implode(';',$allowed_mime)."<br />");
 					}
 				}
 				catch (Exception $e)
 				{	
 					$images_err = $e->getMessage();
+					echo $images_err;
 				}
 					
 				if(!isset($images_err)||empty($images_err))
-				{
+				{					
 					$ext = explode('.',strtolower($_FILES['image']['name'][$key]));
 					$ext = $ext[count($ext)-1];
+					
 					$new_name = "".$galID."_".$img_cnt."_".date('Ymd').".".$ext."";
+					
 					$img_query = "INSERT INTO images (".$prKey.",name,dir_path,file_name) values ('".$galID."','".$new_name."','".$dir_path."','".$_FILES['image']['name'][$key]."')";
-					echo $img_query;
+					
+					$db->query('START TRANSACTION;');
 					$img_res = $db->query($img_query);
-					if($img_res!=1)
-						$img_err++;	
-						
-						if($img_err==0)
+					if($img_res==1)
+					{
+						if(move_uploaded_file($_FILES['image']['tmp_name'][$key],$destination.$new_name))
 						{
-							if($file_move_res = move_uploaded_file($_FILES['image']['tmp_name'][$key],$destination.$new_name))
-								$db->commit();
+							$db->commit();
+							echo "<br />".$new_name." Запазен успешно<br />";
 						}
+						else
+						{
+							$db->rollback();
+							echo "<br />Грешка при запис на файл  ".$_FILES['image']['name'][$key]." във файловата система <br />";
+						}
+					}
+					else
+					{
+						$db->rollback();
+						echo "<br />Грешка при запис на ".$_FILES['image']['name'][$key]." в базата данни<br />";
+					}
 				}
 			}
-		}
-		
-	}
-	/*if($img_res==0)
-		$db->commit();*/
-	else
-	{
-		$db->rollback();
-		echo "images upload error";
+		}	
 	}
 }
 else
 {
 	$db->rollback();
-	$err = "Грешка при запис създаване на галерия";
+	$err = "<br />Грешка при запис създаване на галерия<br />";
 	echo $err;
 }	
-
-
+?>
+		</div>
+		</div>
+	</body>
+</html>
+ 
+<?php
 function createDirectory($dest)
 {
 	if(!is_dir($dest))

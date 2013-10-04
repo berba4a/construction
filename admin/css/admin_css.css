@@ -100,7 +100,7 @@ table{
 			legend a.add_photos:hover{
 				background:#f1f1f1;
 			}
-		fieldset .image_box{
+		fieldset .image_box,fieldset .image_box_prev{
 			width:30%;
 			height:180px;
 			margin:15px 1%;
@@ -108,7 +108,7 @@ table{
 			float:left;
 			/*border:1px solid red;*/
 		}
-			fieldset .image_box img{
+			fieldset .image_box img,fieldset .image_box_prev img{
 				position:relative;
 				width:100%;
 				max-width:205px;
@@ -119,3 +119,12 @@ table{
 		margin:20px auto;
 		padding:5px 10px;
 	}
+	
+	.results{
+		text-align:left;
+		margin-left:20px;
+	}
+		span.result_gallery{
+			font-size:18px;
+			color:#00ff00;
+		}

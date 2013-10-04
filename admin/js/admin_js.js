@@ -45,3 +45,43 @@ function prewImage(input)
 	}
 	reader.readAsDataURL(input.files[0]);
 }
+
+/*ajax delete image*/
+$(document).ready(function()
+{
+	$('.delImg').click(function()
+	{
+		var currID = $(this).attr('id');
+		var imagePrkey = currID.substring(0,currID.search('_'));
+		var imageID = currID.substring(currID.search('_')+1);
+		$.ajax({
+			url : 'ajax/delete_image.php',
+			type : 'GET',
+			data : imagePrkey+'='+imageID,
+			success : function(response)
+			{
+				$("#"+currID).parent().html(response);
+			}
+		});
+	});
+});
+
+/*ajax delete gallery*/
+$(document).ready(function()
+{
+	$('.delete').click(function()
+	{
+		var currID = $(this).attr('id');
+		var galleryPrkey = currID.substring(0,currID.search('_'));
+		var galleryID = currID.substring(currID.search('_')+1);
+		$.ajax({
+			url : 'ajax/delete_gallery.php',
+			type : 'GET',
+			data : galleryPrkey+'='+galleryID,
+			success : function(response)
+			{
+				$('#row_'+galleryPrkey+'_'+galleryID).html('<td colspan="4">'+response+'</td>');
+			}
+		});
+	});
+});
