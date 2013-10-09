@@ -66,20 +66,19 @@ ul{list-style:none;}
 					/*filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#72000000, endColorstr=#72000000); /* IE 6/7 */    
 					/*-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#72000000, endColorstr=#72000000)"; /* IE8 */
 				}
-	.empty_space{
+	.slider_holder{
 		width:100%;
-		height:245px;
+		height:250px;
 		padding:0;
 		margin:0;
+		-moz-box-shadow: 5px 5px 5px rgba(68,68,68,0.6);
+		-webkit-box-shadow: 5px 5px 5px rgba(68,68,68,0.6);
+		box-shadow: 5px 5px 5px rgba(68,68,68,0.6);
+		-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=1, Direction=135, Color=#444444)";
+		filter: progid:DXImageTransform.Microsoft.Shadow(Strength=1, Direction=135, Color=#444444);
+		behavior: url(../css/PIE.htc);
 	}
-		.empty_space img{
-			-moz-box-shadow: 5px 5px 5px rgba(68,68,68,0.6);
-			-webkit-box-shadow: 5px 5px 5px rgba(68,68,68,0.6);
-			box-shadow: 5px 5px 5px rgba(68,68,68,0.6);
-			-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=1, Direction=135, Color=#444444)";
-			filter: progid:DXImageTransform.Microsoft.Shadow(Strength=1, Direction=135, Color=#444444);
-			behavior: url(../css/PIE.htc);
-		}
+		
 	.content_wrapper{
 		width:100%;
 		margin:0;

@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="<?php echo SITE_CSS;?>main.css" type="text/css" />
 <link type="text/css" href="<?php echo SITE_CSS;?>fontello/css/fontello.css" rel="stylesheet" />
 <link type="text/css" href="<?php echo SITE_CSS;?>fontello/css/animation.css" rel="stylesheet" />
-<link type="text/css" href="<?php echo SITE_CSS;?>style.css" rel="stylesheet" />
+<link type="text/css" href="<?php echo SITE_CSS;?>rs.css" rel="stylesheet" />
 <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 <script src="<?php echo SITE_JS;?>jquery.rs.slideshow.min.js"></script>
 <!--script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script-->
@@ -17,9 +17,9 @@
 	echo $browser['browser']."<br />";
 	echo $browser['version'];
 ?-->
+<script src="<?php echo SITE_JS;?>rs_init.js"></script>
 <script type='text/javascript'>
-
-	$(document).ready(function(){
+$(document).ready(function(){
 		var currID = "";
 		$('#main_menu').children().each(function(){
 			currID = $(this).attr('id');
@@ -39,25 +39,6 @@
 			{
 				$(this).mouseover(function(){$(this).children().toggleClass('selected');});
 				$(this).mouseout(function(){$(this).children().toggleClass('selected');});
-			}
-		});
-	});
-	$(document).ready(function ()
-	{
-		$('.rs-slideshow').rsfSlideshow({
-			controls: {
-				previousSlide: {
-					auto: false,    //    auto-generate a "previous slide" control
-					//    automatically pause the slideshow when 
-					//    this control is clicked
-					autostop: true
-				},
-				nextSlide: {
-					auto: true,    //    auto-generate a "next slide" control
-					//    automatically pause the slideshow when 
-					//    this control is clicked
-					autostop: true
-				}
 			}
 		});
 	});
@@ -93,25 +74,22 @@
 			</div>
 			<div class='clear'></div>
 		</div>
-		<div class='empty_space'>
+		<div class='slider_holder'>
 			<!--img src='<!--?php echo SITE_IMG;?>const.jpg' /-->
 			<div id="slideshow" class="rs-slideshow">
 				<div class="slide-container">
-					<img src="<?php echo SITE_IMG;?>const.jpg" alt="The first image in a slideshow demo." title="This is the first slide" />
+					<img src="<?php echo SITE_IMG;?>rs/slider_transf.jpg" alt="The first image in a slideshow demo." />
 				</div>
 				<ol class="slides">
 					<li>
-						<a href="<?php echo SITE_IMG;?>const.jpg" 
-							title="This is the first slide"></a>
+						<a href="<?php echo SITE_IMG;?>rs/slider_transf.jpg"></a>
 					</li>
 					<li>
-						<a href="<?php echo SITE_IMG;?>const2.jpg" 
-							title="This is the second slide" 
+						<a href="<?php echo SITE_IMG;?>rs/slider_transp.jpg" 
 							data-link-to=""></a>
 					</li>
 					<li>
-						<a href="<?php echo SITE_IMG;?>const3.jpg" 
-							title="This is the third slide"></a>
+						<a href="<?php echo SITE_IMG;?>rs/slider_repairs.jpg"></a>
 					</li>
 				</ol>
 			</div>
