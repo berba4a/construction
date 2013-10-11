@@ -111,6 +111,7 @@ include_once("admin/includes/header.php");
 						{
 							$img_cnt++;
 							echo "<div class='image_box_prev'>";
+								echo $img_arr['name']."<br />";
 								echo "<img src='".SITE_ROOT.$img_arr['dir_path'].$img_arr['name']."' />";
 								echo "<a href='javascript:void(0)' id='".$imgPrKey."_".$img_arr[$imgPrKey]."' class='delImg'>Изтрии тази снимка</a>";
 							echo "</div>";

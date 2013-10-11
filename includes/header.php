@@ -91,6 +91,9 @@ $(document).ready(function(){
 					<li>
 						<a href="<?php echo SITE_IMG;?>rs/slider_repairs.jpg"></a>
 					</li>
+					<li>
+						<a href="<?php echo SITE_IMG;?>rs/slider_ham.jpg"></a>
+					</li>
 				</ol>
 			</div>
 		</div>
