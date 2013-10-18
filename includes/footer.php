@@ -7,13 +7,12 @@
 					<div class='rounded_content'>
 						<p class='contacts'>
 							<img src='<?php echo SITE_IMG;?>contact_us_logo.png' />
-							<b>Телефон:</b>+35938662287<br />
-							<b>GSM(vivacom)</b>: +359878111222<br />
-							<b>GSM(globul):</b> +359 898111222<br />
-							<b>GSM(mtel):</b> +359 0888111222<br />
-							<b>e-mail:</b> <a href='mailto:construction@construction.com' >construction@construction.com</a><br />
-							<b>web page: </b><a href='webpage.com' >webpage.com</a><br />
-							<b>адрес: </b>гр.Хасково ,ул."Георги Кирков" 14 , вх.А , ет.1 , ап.15<br />
+							<br />
+							<b>GSM:</b> +359 988924900<br /><br />
+							<b>GSM:</b> +359 895730080<br />
+							<br /><br />
+							<b>e-mail:</b> <a href='mailto:&#114;&#101;&#109;&#111;&#110;&#116;&#105;&#095;&#117;&#115;&#108;&#117;&#103;&#105;&#064;&#097;&#098;&#118;&#046;&#098;&#103;' >&#114;&#101;&#109;&#111;&#110;&#116;&#105;&#095;&#117;&#115;&#108;&#117;&#103;&#105;&#064;&#097;&#098;&#118;&#046;&#098;&#103;</a><br />
+							<b>адрес: </b>гр.Хасково ,ул."Г.Кирков" 31<br />
 						</p>
 						<p class='content_footer'>
 							За повече посробности посетете рубриката <a href='<?php SITE_ROOT;?>contacts.php'>&raquo; контакти</a>

@@ -29,7 +29,6 @@ $(document).ready(function()
 
 function prewImage(input)
 {
-	alert
 	var prewID = 'prew_'+$(input).attr('id');
 	var reader = new FileReader();
 	reader.onload = function (e) 

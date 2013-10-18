@@ -14,7 +14,7 @@ include_once("includes/header.php");
 		<div class='rounded_content'>
 			<p>
 				<img src='<?php echo SITE_IMG;?>about.jpg' />
-				Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
+				За успешната реализация на нашите проекти използваме качествени материали, професионални машини и инструменти. Разполагаме с екип от двадесет квалифицирани строителни работници, благодарение на които изпълняваме в срок строително - ремонтните дейности. Услугите, които предлагаме дават на нашите клиенти спокойствие и свободно време. Освен с ремонта на вашето жилище ние се занимаваме и с пазаруването и доставката на всички материали на най-добри цени и качество. Предлагаме безплатен оглед и индивидуален проект. Нашите дизайнери могат да ви консултират за изграждане на интериора и за цялостния облик на вашето жилище. Изготвяме договор за изпълнение, в който подробно са описани всички операции, уточнени са цените и е фиксиран крайният срок за предаване на обекта. Предлагаме и комплексно професинално почистване на ниски цени, както и абонаментни програми с отстъпки.
 			</p>
 			<p class='content_footer right'>
 				<a href='<?php echo SITE_ROOT;?>pages/aboutus.php'><!--img src='<!--?php echo SITE_IMG;?>yt.png' border='0' /-->&raquo; Виж повече за нас</a>
@@ -29,7 +29,7 @@ include_once("includes/header.php");
 		<div class='rounded_content'>
 			<p>
 				<img src='<?php echo SITE_IMG;?>construction-lit_inset.png' />
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum est laborum.
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
 			</p>
 			<p class='content_footer'>
 				<a href='<?php echo SITE_ROOT;?>pages/services.php#repairs'>&raquo; Вижте повече за услугата</a>
@@ -43,10 +43,10 @@ include_once("includes/header.php");
 		<div class='rounded_content'>
 			<p>
 				<img src='<?php echo SITE_IMG;?>construction_image.jpg' />
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud <B>&raquo;EXERCITATION ULLAMCO</B><BR /> laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum est laborum.
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
 			</p>
 			<p class='content_footer'>
-				<a href='<?php echo SITE_ROOT;?>pages/services.php#construction'>&raquo; Вижте повече за услугата</a>
+				<a href='<?php echo SITE_ROOT;?>pages/services.php#transportation'>&raquo; Вижте повече за услугата</a>
 			</p>
 		</div>
 	</div>
@@ -57,10 +57,53 @@ include_once("includes/header.php");
 		<div class='rounded_content'>
 			<p>
 				<img src='<?php echo SITE_IMG;?>MOVER.gif' />
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id .
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 			</p>
 			<p class='content_footer'>
 				<a href='<?php echo SITE_ROOT;?>pages/services.php#moving'>&raquo; Вижте повече за услугата</a>
+			</p>
+		</div>
+	</div>
+	<div class='clear'></div>
+	<div class='rounded small first'>
+		<div class='rounded_header'>
+			<h1>Кърти чисти извозва</h1>
+		</div>
+		<div class='rounded_content'>
+			<p>
+				<img src='<?php echo SITE_IMG;?>MOVER.gif' />
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+			</p>
+			<p class='content_footer'>
+				<a href='<?php echo SITE_ROOT;?>pages/services.php#breaks'>&raquo; Вижте повече за услугата</a>
+			</p>
+		</div>
+	</div>
+	<div class='rounded small'>
+		<div class='rounded_header'>
+			<h1>Трансфери</h1>
+		</div>
+		<div class='rounded_content'>
+			<p>
+				<img src='<?php echo SITE_IMG;?>MOVER.gif' />
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+			</p>
+			<p class='content_footer'>
+				<a href='<?php echo SITE_ROOT;?>pages/services.php#transphers'>&raquo; Вижте повече за услугата</a>
+			</p>
+		</div>
+	</div>
+	<div class='rounded small'>
+		<div class='rounded_header'>
+			<h1>строителство</h1>
+		</div>
+		<div class='rounded_content'>
+			<p>
+				<img src='<?php echo SITE_IMG;?>MOVER.gif' />
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+			</p>
+			<p class='content_footer'>
+				<a href='<?php echo SITE_ROOT;?>pages/services.php#construction'>&raquo; Вижте повече за услугата</a>
 			</p>
 		</div>
 	</div>

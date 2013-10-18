@@ -8,7 +8,8 @@ include_once("includes/header.php");
 ?>
 <script type='text/javascript'>
 	$(document).ready(function(){
-		$('.content_field .rounded').each(function(){
+		$('.content_field .rounded').each(function()
+		{
 			var currID = "";
 			currID = $(this).attr('id');
 			if(window.location.href.indexOf('#'+currID) > -1)
@@ -16,7 +17,8 @@ include_once("includes/header.php");
 				/*Close not choosen elements*/
 				$(this).siblings().each(function()
 				{
-					$(this).children('.rounded_content').slideToggle('slow',function(){
+					$(this).children('.rounded_content').slideToggle('slow',function()
+					{
 						$(this).prev().toggleClass('closed');
 					});
 				});
@@ -94,7 +96,7 @@ include_once("includes/header.php");
 			</p>
 		</div>
 	</div>
-	<div class='rounded' id='construction'>
+	<div class='rounded' id='transportation'>
 		<div class='rounded_header'>
 			<h1>Транспортни услуги<span class='open_close_arrow right'><i class='icon-angle-up'></i></span></h1>
 		</div>
@@ -129,6 +131,69 @@ include_once("includes/header.php");
 	<div class='rounded' id='moving'>
 		<div class='rounded_header'>
 			<h1>Хамалски услуги<span class='open_close_arrow right'><i class='icon-angle-up'></i></span></h1>
+		</div>
+		<div class='rounded_content'>
+			<p>
+				<img src='<?php echo SITE_IMG;?>MOVER.gif' />
+				Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptuary. 
+			</p>
+			<p>
+				<ul>
+					<li>Цени :</li>
+					<li>Хамалска услуга 1 - 100 лева</li>
+					<li>Хамалска услуга 2 - 200 лева</li>
+					<li>Хамалска услуга 3 - 300 лева</li>
+					<li>Хамалска услуга 4 - 400 лева</li>
+					<li>Хамалска услуга 5 - 500 лева</li>
+				</ul>
+			</p>
+		</div>
+	</div>
+	<div class='rounded' id='breaks'>
+		<div class='rounded_header'>
+			<h1>Кърти чисти извозва<span class='open_close_arrow right'><i class='icon-angle-up'></i></span></h1>
+		</div>
+		<div class='rounded_content'>
+			<p>
+				<img src='<?php echo SITE_IMG;?>MOVER.gif' />
+				Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptuary. 
+			</p>
+			<p>
+				<ul>
+					<li>Цени :</li>
+					<li>Хамалска услуга 1 - 100 лева</li>
+					<li>Хамалска услуга 2 - 200 лева</li>
+					<li>Хамалска услуга 3 - 300 лева</li>
+					<li>Хамалска услуга 4 - 400 лева</li>
+					<li>Хамалска услуга 5 - 500 лева</li>
+				</ul>
+			</p>
+		</div>
+	</div>
+	<div class='rounded' id='transphers'>
+		<div class='rounded_header'>
+			<h1>Трансфери<span class='open_close_arrow right'><i class='icon-angle-up'></i></span></h1>
+		</div>
+		<div class='rounded_content'>
+			<p>
+				<img src='<?php echo SITE_IMG;?>MOVER.gif' />
+				Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptuary. 
+			</p>
+			<p>
+				<ul>
+					<li>Цени :</li>
+					<li>Хамалска услуга 1 - 100 лева</li>
+					<li>Хамалска услуга 2 - 200 лева</li>
+					<li>Хамалска услуга 3 - 300 лева</li>
+					<li>Хамалска услуга 4 - 400 лева</li>
+					<li>Хамалска услуга 5 - 500 лева</li>
+				</ul>
+			</p>
+		</div>
+	</div>
+	<div class='rounded' id='construction'>
+		<div class='rounded_header'>
+			<h1>Строителство<span class='open_close_arrow right'><i class='icon-angle-up'></i></span></h1>
 		</div>
 		<div class='rounded_content'>
 			<p>
