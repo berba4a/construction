@@ -110,6 +110,7 @@ ul{list-style:none;}
 		.rightside_bar .rounded{margin:5.5% 0;}
 		.rounded.small{
 			width:32%;/*49%*/
+			/*height:330px;*/
 			float:left;
 			margin:0 0 2% 2%;
 		}
@@ -125,6 +126,12 @@ ul{list-style:none;}
 				border-radius: 20px 20px 0 0;
 				behavior: url(../css/PIE.htc);
 			}
+				.rounded_header h1 a{
+					color:#ffffff;
+				}
+				.rounded_header h1 a:hover{
+					color:#e5e5e5;
+				}
 				.rounded_header.closed{
 					-moz-border-radius: 20px 20px 20px 20px;
 					-webkit-border-radius: 20px 20px 20px 20px;
@@ -160,6 +167,9 @@ ul{list-style:none;}
 				border-radius: 0 0 20px 20px ;
 				behavior: url(../css/PIE.htc);
 			}
+				.rounded.small .rounded_content{
+					height:270px;
+				}
 				.rounded_content p{
 					margin:0;
 					padding:0;
@@ -178,20 +188,26 @@ ul{list-style:none;}
 						
 						.rounded_content p.content_footer a {text-transform:uppercase;}
 						
-					.rounded_content p img{
+					.rounded_content p a img,.rounded_content p img{
 						width:33%;
 						margin:0 10px 0 0;
 						float:left;
 					}
 						.rounded_content p img.mobile{width:30px;margin:0}
-						.rounded.small .rounded_content p{font-size:14px}
-						.rounded.small .rounded_content p img{
-							width:45%;
+						.rounded.small .rounded_content p{font-size:12px}
+						.rounded.small .rounded_content p a img,.rounded.small .rounded_content p img{
+							width:43%;
 						}
 						.rounded_content p.content_footer.right {text-align:right}
 						.rounded_content p.content_footer a{font-size:12px}
 						.rounded_content p.content_footer.right a{vertical-align:middle;text-decoration:none;}
 						.rounded_content p.content_footer.right a img{width:7%;float:right;vertical-align:middle;}
+						.rounded.small .rounded_content p.content_footer{
+							width:85%;
+							position:absolute;
+							bottom:20px;
+						}
+						
 		.main_band.footer{padding:1px;}/*margin-top:1%;*/
 			.main_band.footer p{color:white;text-align:center;font-size:12px}
 			.main_band.footer span.counter{padding-right:20px;position:relative;float:right;}

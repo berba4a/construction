@@ -8,11 +8,12 @@ include_once("includes/header.php");
 ?>
 <script type='text/javascript'>
 	$(document).ready(function(){
+		var sel_id = '<?php echo $_GET['service'];?>';
 		$('.content_field .rounded').each(function()
 		{
 			var currID = "";
 			currID = $(this).attr('id');
-			if(window.location.href.indexOf('#'+currID) > -1)
+			if(sel_id==currID)//window.location.href.indexOf('#'+currID) > -1
 			{
 				/*Close not choosen elements*/
 				$(this).siblings().each(function()
@@ -25,7 +26,7 @@ include_once("includes/header.php");
 				/*change the arrow to open close*/
 				$(this).siblings().each(function()
 				{
-					var arrow_obj = $(this).children('.rounded_header').children('h1').children('span.open_close_arrow').children('i');
+					var arrow_obj = $(this).children('.rounded_header.closable').children('h1').children('span.open_close_arrow').children('i');
 					if($(arrow_obj).hasClass('icon-angle-up'))
 					{
 						$(arrow_obj).removeClass('icon-angle-up');
@@ -76,8 +77,10 @@ include_once("includes/header.php");
 <script src="<?php echo SITE_JS;?>openClosePanels.js"  type="text/javascript"></script>
 <div class='content_field'>
 	<div class='rounded' id='repairs'>
-		<div class='rounded_header'>
-			<h1>Ремонти<span class='open_close_arrow right'><i class='icon-angle-up'></i></span></h1>
+		<div class='rounded_header closable'>
+			<h1>Ремонти
+				<span class='open_close_arrow right'><i class='icon-angle-up'></i></span>
+			</h1>
 		</div>
 		<div class='rounded_content'>
 			<p>
@@ -96,8 +99,71 @@ include_once("includes/header.php");
 			</p>
 		</div>
 	</div>
+	<div class='rounded' id='windows'>
+		<div class='rounded_header closable'>
+			<h1>дограми<span class='open_close_arrow right'><i class='icon-angle-up'></i></span></h1>
+		</div>
+		<div class='rounded_content'>
+			<p>
+				<img src='<?php echo SITE_IMG;?>dogrami.jpeg' />
+				Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptuary. 
+			</p>
+			<p>
+				<ul>
+					<li>Цени :</li>
+					<li>Хамалска услуга 1 - 100 лева</li>
+					<li>Хамалска услуга 2 - 200 лева</li>
+					<li>Хамалска услуга 3 - 300 лева</li>
+					<li>Хамалска услуга 4 - 400 лева</li>
+					<li>Хамалска услуга 5 - 500 лева</li>
+				</ul>
+			</p>
+		</div>
+	</div>
+	<div class='rounded' id='breaks'>
+		<div class='rounded_header closable'>
+			<h1>Кърти чисти извозва<span class='open_close_arrow right'><i class='icon-angle-up'></i></span></h1>
+		</div>
+		<div class='rounded_content'>
+			<p>
+				<img src='<?php echo SITE_IMG;?>MOVER.gif' />
+				Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptuary. 
+			</p>
+			<p>
+				<ul>
+					<li>Цени :</li>
+					<li>Хамалска услуга 1 - 100 лева</li>
+					<li>Хамалска услуга 2 - 200 лева</li>
+					<li>Хамалска услуга 3 - 300 лева</li>
+					<li>Хамалска услуга 4 - 400 лева</li>
+					<li>Хамалска услуга 5 - 500 лева</li>
+				</ul>
+			</p>
+		</div>
+	</div>
+	<div class='rounded' id='moving'>
+		<div class='rounded_header closable'>
+			<h1>Хамалски услуги<span class='open_close_arrow right'><i class='icon-angle-up'></i></span></h1>
+		</div>
+		<div class='rounded_content'>
+			<p>
+				<img src='<?php echo SITE_IMG;?>MOVER.gif' />
+				Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptuary. 
+			</p>
+			<p>
+				<ul>
+					<li>Цени :</li>
+					<li>Хамалска услуга 1 - 100 лева</li>
+					<li>Хамалска услуга 2 - 200 лева</li>
+					<li>Хамалска услуга 3 - 300 лева</li>
+					<li>Хамалска услуга 4 - 400 лева</li>
+					<li>Хамалска услуга 5 - 500 лева</li>
+				</ul>
+			</p>
+		</div>
+	</div>
 	<div class='rounded' id='transportation'>
-		<div class='rounded_header'>
+		<div class='rounded_header closable'>
 			<h1>Транспортни услуги<span class='open_close_arrow right'><i class='icon-angle-up'></i></span></h1>
 		</div>
 		<div class='rounded_content'>
@@ -128,72 +194,9 @@ include_once("includes/header.php");
 			</p>
 		</div>
 	</div>
-	<div class='rounded' id='moving'>
-		<div class='rounded_header'>
-			<h1>Хамалски услуги<span class='open_close_arrow right'><i class='icon-angle-up'></i></span></h1>
-		</div>
-		<div class='rounded_content'>
-			<p>
-				<img src='<?php echo SITE_IMG;?>MOVER.gif' />
-				Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptuary. 
-			</p>
-			<p>
-				<ul>
-					<li>Цени :</li>
-					<li>Хамалска услуга 1 - 100 лева</li>
-					<li>Хамалска услуга 2 - 200 лева</li>
-					<li>Хамалска услуга 3 - 300 лева</li>
-					<li>Хамалска услуга 4 - 400 лева</li>
-					<li>Хамалска услуга 5 - 500 лева</li>
-				</ul>
-			</p>
-		</div>
-	</div>
-	<div class='rounded' id='breaks'>
-		<div class='rounded_header'>
-			<h1>Кърти чисти извозва<span class='open_close_arrow right'><i class='icon-angle-up'></i></span></h1>
-		</div>
-		<div class='rounded_content'>
-			<p>
-				<img src='<?php echo SITE_IMG;?>MOVER.gif' />
-				Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptuary. 
-			</p>
-			<p>
-				<ul>
-					<li>Цени :</li>
-					<li>Хамалска услуга 1 - 100 лева</li>
-					<li>Хамалска услуга 2 - 200 лева</li>
-					<li>Хамалска услуга 3 - 300 лева</li>
-					<li>Хамалска услуга 4 - 400 лева</li>
-					<li>Хамалска услуга 5 - 500 лева</li>
-				</ul>
-			</p>
-		</div>
-	</div>
 	<div class='rounded' id='transphers'>
-		<div class='rounded_header'>
+		<div class='rounded_header closable'>
 			<h1>Трансфери<span class='open_close_arrow right'><i class='icon-angle-up'></i></span></h1>
-		</div>
-		<div class='rounded_content'>
-			<p>
-				<img src='<?php echo SITE_IMG;?>MOVER.gif' />
-				Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptuary. 
-			</p>
-			<p>
-				<ul>
-					<li>Цени :</li>
-					<li>Хамалска услуга 1 - 100 лева</li>
-					<li>Хамалска услуга 2 - 200 лева</li>
-					<li>Хамалска услуга 3 - 300 лева</li>
-					<li>Хамалска услуга 4 - 400 лева</li>
-					<li>Хамалска услуга 5 - 500 лева</li>
-				</ul>
-			</p>
-		</div>
-	</div>
-	<div class='rounded' id='construction'>
-		<div class='rounded_header'>
-			<h1>Строителство<span class='open_close_arrow right'><i class='icon-angle-up'></i></span></h1>
 		</div>
 		<div class='rounded_content'>
 			<p>

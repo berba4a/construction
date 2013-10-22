@@ -8,7 +8,7 @@ $stmt = $db->query($query);
 while($row_arr = $db->fetchArray($stmt))
 {
 	echo "<div class='rounded'>";
-		echo "<div class='rounded_header'>";
+		echo "<div class='rounded_header closable'>";
 			echo "<h1>".$row_arr['name']."<span class='open_close_arrow right'><i class='icon-angle-up'></i></span></h1>";
 		echo "</div>";
 		echo "<div class='rounded_content'>";

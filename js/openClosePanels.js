@@ -1,17 +1,19 @@
 $(document).ready(function(){
-		$('.open_close_arrow').click(function(){
-			if($(this).children('i').hasClass('icon-angle-up'))
+		$('.rounded_header.closable').click(function()
+		{
+			if($(this).children('h1').children('span.open_close_arrow').children('i').hasClass('icon-angle-up'))
 			{
-				$(this).children('i').removeClass('icon-angle-up');
-				$(this).children('i').addClass('icon-angle-down');
+				$(this).children('h1').children('span.open_close_arrow').children('i').removeClass('icon-angle-up');
+				$(this).children('h1').children('span.open_close_arrow').children('i').addClass('icon-angle-down');
 			}
 			else
 			{
-				$(this).children('i').removeClass('icon-angle-down');
-				$(this).children('i').addClass('icon-angle-up');
+				$(this).children('h1').children('span.open_close_arrow').children('i').removeClass('icon-angle-down');
+				$(this).children('h1').children('span.open_close_arrow').children('i').addClass('icon-angle-up');
 			}
 			/*$(this).parent().parent('.rounded_header').slideToggle('slow');*/
-			$(this).parent().parent('.rounded_header').next('.rounded_content').slideToggle('slow',function(){
+			$(this).next('.rounded_content').slideToggle('slow',function()
+			{
 				$(this).prev().toggleClass('closed');
 			});
 		});

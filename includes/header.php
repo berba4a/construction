@@ -98,6 +98,6 @@ $(document).ready(function(){
 			</div>
 		</div>
 		
-		<div class='content_wrapper'>
+		<div class='content_wrapper' id='content_wr'>
 		<!--End header-->
 		
